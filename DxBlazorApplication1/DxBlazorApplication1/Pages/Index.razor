@@ -1,0 +1,36 @@
+﻿@page "/"
+
+@using DxBlazorApplication1.Data
+@inject WeatherForecastService ForecastService
+
+    <DxGrid Data="@forecasts"
+            ShowFilterRow="true"
+            CssClass="mw-1100">
+        <Columns>
+            <DxGridDataColumn Caption="Date" FieldName="Date"  />
+            <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF"  />
+            <DxGridDataColumn FieldName="SummaryString" >
+                <FilterRowCellTemplate>
+                    @{
+                        var items = TagBoxFilterRowUtils.GetValueByFunctionOperator(context.FilterCriteria, nameof(WeatherForecast.Summary));
+                    }
+                    <DxTagBox TData="string"
+                              TValue="string"
+                              Data="Summaries"
+                              Values="items"
+                              ValuesChanged="(newValues) => { context.FilterCriteria = TagBoxFilterRowUtils.CreateFilterCriteriaByValues(newValues, nameof(WeatherForecast.Summary)); }" />
+                </FilterRowCellTemplate>
+            </DxGridDataColumn>
+        </Columns>
+    </DxGrid>
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    List<string> Summaries = new List<string>();
+
+    protected override async Task OnInitializedAsync() {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        Summaries = WeatherForecastService.Summaries.ToList();
+    }
+}

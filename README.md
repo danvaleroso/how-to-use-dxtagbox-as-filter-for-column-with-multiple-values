@@ -4,7 +4,7 @@ This example demonstrates how to use DxTagBox in the [DxGridDataColumn.FilterRow
 
 ![image](https://user-images.githubusercontent.com/69251191/180018055-298229e1-745b-46b7-984f-592c7d486e1e.png)
 
-The main idea is to handle the DxTagBox' ValueChanged event to set the "context.FilterCriteria" to a custom filter criteria depending on DxTagBox' selected values.
+The main idea is to handle the DxTagBox' ValueChanged event to set the "context.FilterCriteria" to a custom filter criteria. This custom filter criteria is created depending on DxTagBox' selected values.
 
 ## Files to Look At
 
@@ -12,14 +12,3 @@ The main idea is to handle the DxTagBox' ValueChanged event to set the "context.
 - link.js
 - ...
 
-## Documentation
-
-- link
-- link
-- ...
-
-## More Examples
-
-- link
-- link
-- ...

@@ -7,18 +7,18 @@ This example demonstrates how to use DxTagBox in the [DxGridDataColumn.FilterRow
 The main idea is to handle the DxTagBox' ValueChanged event to set the "context.FilterCriteria" to a custom filter criteria. This custom filter criteria is created depending on DxTagBox' selected values.
 
 ```razor
-            <DxGridDataColumn FieldName="SummaryString" >
-                <FilterRowCellTemplate>
-                    @{
-                        var items = TagBoxFilterRowUtils.GetValueByFunctionOperator(context.FilterCriteria, nameof(WeatherForecast.Summary));
-                    }
-                    <DxTagBox TData="string"
-                              TValue="string"
-                              Data="Summaries"
-                              Values="items"
-                              ValuesChanged="(newValues) => { context.FilterCriteria = TagBoxFilterRowUtils.CreateFilterCriteriaByValues(newValues, nameof(WeatherForecast.Summary)); }" />
-                </FilterRowCellTemplate>
-            </DxGridDataColumn>
+<DxGridDataColumn FieldName="SummaryString" >
+    <FilterRowCellTemplate>
+        @{
+            var items = TagBoxFilterRowUtils.GetValueByFunctionOperator(context.FilterCriteria, nameof(WeatherForecast.Summary));
+        }
+        <DxTagBox TData="string"
+                  TValue="string"
+                  Data="Summaries"
+                  Values="items"
+                  ValuesChanged="(newValues) => { context.FilterCriteria = TagBoxFilterRowUtils.CreateFilterCriteriaByValues(newValues, nameof(WeatherForecast.Summary)); }" />
+    </FilterRowCellTemplate>
+</DxGridDataColumn>
 ```
 
 ```cs
@@ -48,6 +48,6 @@ The main idea is to handle the DxTagBox' ValueChanged event to set the "context.
 
 ## Files to Look At
 
-* [Index.razor](./CS/DxBlazorApplication1/Pages/Index)
+* [Index.razor](./CS/DxBlazorApplication1/Pages/Index.razor)
 * [TagBoxFilterRowUtils.cs](./CS/DxBlazorApplication1/TagBoxFilterRowUtils.cs)
 

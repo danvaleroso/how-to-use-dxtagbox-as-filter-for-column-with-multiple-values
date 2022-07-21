@@ -1,10 +1,10 @@
-# Grid for Blazor - How to use DxTagBox as filter for column with multiple values
+# Grid for Blazor - How to use the DxTagBox control as a filter for a column with multiple values
 
-This example demonstrates how to use DxTagBox in the [DxGridDataColumn.FilterRowCellTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridDataColumn.FilterRowCellTemplate) to filter the column with multiple values. 
+This example demonstrates how to use the [DxTagBox](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTagBox-2) control in the [DxGridDataColumn.FilterRowCellTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridDataColumn.FilterRowCellTemplate) to filter the column with multiple values. 
 
 ![image](https://user-images.githubusercontent.com/69251191/180018055-298229e1-745b-46b7-984f-592c7d486e1e.png)
 
-The main idea is to handle the DxTagBox' ValueChanged event to set the "context.FilterCriteria" to a custom filter criteria. This custom filter criteria is created depending on DxTagBox' selected values.
+The main idea is to handle the [DxTagBox](http://docs.devexpress.devx/Blazor/DevExpress.Blazor.DxTagBox-2)' [ValuesChanged](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTagBox-2.ValuesChanged) event to set the "context.FilterCriteria" to a custom filter criteria. This custom filter criteria is created depending on DxTagBox' selected values.
 
 ```razor
 <DxGridDataColumn FieldName="SummaryString" >
